@@ -45,13 +45,8 @@ if __name__ == "__main__":
     session = twit_auth.fetch_auth_session()
 
     # Create new tweets
-    r = twit_auth.create_tweet(session, "New Claim! Pine")
+    r = twit_auth.create_tweet(session, "Message 1")
     print(f"{r.status_code}: {r.json()}")
 
-    r2 = twit_auth.create_tweet(session, "New Claim! Dan")
+    r2 = twit_auth.create_tweet(session, "Message 2")
     print(f"{r2.status_code}: {r2.json()}")
-
-
-# For the name claimer
-# if claim:
-#   twit_auth.create_tweet(oauth, f"New Claim! {name}")

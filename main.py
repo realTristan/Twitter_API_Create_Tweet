@@ -2,17 +2,17 @@ from requests_oauthlib import OAuth1Session
 
 class TwitAuth:
     def __init__(self, key: str, secret: str):
-        self.oauth = OAuth1Session(key, client_secret=secret)
+        self.session = OAuth1Session(key, client_secret=secret)
         self.secret = secret
         self.key = key
 
     # Get the tokens
     def fetch_oauth_tokens(self):
-        r = self.oauth.fetch_request_token(
+        r =self.session.fetch_request_token(
             "https://api.twitter.com/oauth/request_token?oauth_callback=oob&x_auth_access_type=write"
         )
         print(f"Authoization Required: ", 
-            self.oauth.authorization_url("https://api.twitter.com/oauth/authorize")
+           self.session.authorization_url("https://api.twitter.com/oauth/authorize")
         )
         return OAuth1Session(self.key,
             client_secret=self.secret,
@@ -32,8 +32,8 @@ class TwitAuth:
         )
     
     # Createa new tweet
-    def create_tweet(self, oauth: OAuth1Session, message: str):
-        return oauth.post("https://api.twitter.com/2/tweets", json={"text": message})
+    def create_tweet(self, session: OAuth1Session, message: str):
+        return session.post("https://api.twitter.com/2/tweets", json={"text": message})
 
 
 

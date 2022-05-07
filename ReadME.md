@@ -1,10 +1,5 @@
 # For the name claimer
-if claim:\
-____twit_auth.create_tweet(oauth, f"New Claim! {name}")
-
-
 <pre>
-hello, this is
-   just an     example
-....
+if claim:
+    twit_auth.create_tweet(oauth, f"New Claim! {name}")
 </pre>

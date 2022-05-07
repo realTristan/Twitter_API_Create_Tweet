@@ -1,3 +1,3 @@
 # For the name claimer
-if claim:
+if claim:\
     twit_auth.create_tweet(oauth, f"New Claim! {name}")

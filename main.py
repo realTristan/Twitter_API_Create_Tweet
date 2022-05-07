@@ -42,13 +42,13 @@ if __name__ == "__main__":
         key="YOUR TWITTER API KEY",
         secret="YOUR TWITTER API SECRET"
     )
-    oauth = twit_auth.fetch_auth_session()
+    session = twit_auth.fetch_auth_session()
 
     # Create new tweets
-    r = twit_auth.create_tweet(oauth, "New Claim! Pine")
+    r = twit_auth.create_tweet(session, "New Claim! Pine")
     print(f"{r.status_code}: {r.json()}")
 
-    r2 = twit_auth.create_tweet(oauth, "New Claim! Dan")
+    r2 = twit_auth.create_tweet(session, "New Claim! Dan")
     print(f"{r2.status_code}: {r2.json()}")
 
 

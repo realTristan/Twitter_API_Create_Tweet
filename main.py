@@ -31,7 +31,7 @@ class TwitAuth:
             resource_owner_secret=tokens["oauth_token_secret"],
         )
     
-    # Createa new tweet
+    # Create a new tweet
     def create_tweet(self, session: OAuth1Session, message: str):
         return session.post("https://api.twitter.com/2/tweets", json={"text": message})
 

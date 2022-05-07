@@ -8,7 +8,7 @@ class TwitAuth:
 
     # Get the tokens
     def fetch_oauth_tokens(self):
-        r =self.session.fetch_request_token(
+        r = self.session.fetch_request_token(
             "https://api.twitter.com/oauth/request_token?oauth_callback=oob&x_auth_access_type=write"
         )
         print(f"Authoization Required: ", 
